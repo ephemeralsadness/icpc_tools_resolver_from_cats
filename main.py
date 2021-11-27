@@ -187,14 +187,6 @@ def write_data(attempts, contest, problems, teams):
             write_icpc_command('submissions', submission, output_file)
             write_icpc_command('judgements', judgement, output_file)
 
-        for award, ts in awards.items():
-            award_dict = {
-                'id': 'award-{}'.format(ts[0]),
-                'citation': award,
-                'team_ids': ts
-            }
-            write_icpc_command('awards', award_dict, output_file)
-
 
 def main():
     contest, problems = read_contest(CONTEST_INPUT_FILENAME)
